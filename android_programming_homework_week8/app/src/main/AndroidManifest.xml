@@ -9,16 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".week8_homework">
+        <activity android:name=".collectNameDataMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".nameActivity" />
-        <activity android:name=".addressActivity" />
-        <activity android:name=".summaryActivity"></activity>
+        <activity android:name=".collectAddressDataActivity"
+            android:parentActivityName="com.example.burno.android_programming_homework_week8.collectNameDataMainActivity" />
+        <!-- Parent activity meta-data to support 4.0 and lower -->
+
+        <activity android:name=".collectDateOfBirthActivity"
+            android:parentActivityName="com.example.burno.android_programming_homework_week8.collectAddressDataActivity"/>
+        <activity android:name=".summaryActivity"
+            android:parentActivityName="com.example.burno.android_programming_homework_week8.collectDateOfBirthActivity"></activity>
+        <meta-data
+            android:name="android.support.PARENT_ACTIVITY"
+            android:value="com.example.burno.android_programming_homework_week8.collectNameDataMainActivity" />
     </application>
 
 </manifest>
